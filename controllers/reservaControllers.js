@@ -15,7 +15,7 @@ const ReservaController = {}; // Creamos el controloador de reservas
 //GET all reservas
 ReservaController.getAll = (req, res) => {
     
-    reservas.findAll({include: [{ model:hotelModel}, {model:clientModel}] })
+    reservas.findAll()
       .then(data => {
         res.send(data);
       })
