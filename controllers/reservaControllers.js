@@ -10,7 +10,6 @@ var clientModel  = require('../models').clientes;
 const ReservaController = {}; // Creamos el controloador de reservas
 
 
-
 //CRUD end-points Functions
 //GET all reservas
 ReservaController.getAll = (req, res) => {
