@@ -11,8 +11,8 @@ router.get('/cliente/:dni', reservaController.getByDniCliente);
 router.get('/telefono/:telefono', reservaController.getByTelefono);
 router.get('/email/:email', reservaController.getByEmail);
 router.get('/hotel/:hotelId', reservaController.getByHotelId);
-router.get('/fechaEntrada', reservaController.getByFechaE);
-router.get('/fechaSalida', reservaController.getByFechaS);
+router.get('/fechaEntrada', reservaController.getByFechaEntrada);
+router.get('/fechaSalida', reservaController.getByFechaSalida);
 
 
 

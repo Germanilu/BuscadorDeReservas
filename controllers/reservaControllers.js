@@ -4,8 +4,8 @@ const reservas = db.reserva;
 const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
 
 //Para las dependencias
-var hotelModel  = require('../models').hotel;  
-var clientModel  = require('../models').cliente;
+var hotelModel  = require('../models').hoteles;  
+var clientModel  = require('../models').clientes;
 
 const ReservaController = {}; // Creamos el controloador de reservas
 
@@ -50,7 +50,7 @@ ReservaController.getById = (req, res) => {
 
   //GET reserva por nombre de cliente
 
-ReservaController.getByCliente = (req, res) => {
+ReservaController.getByDniCliente = (req, res) => {
     reservas.findAll({
         include: [{ 
             model:hotelModel,
@@ -101,7 +101,7 @@ ReservaController.getByCliente = (req, res) => {
         });
       });
   };
-  ReservaController.getByHotel = (req, res) => {
+  ReservaController.getByHotelId = (req, res) => {
     reservas.findAll({
         include: [{ 
             model:hotelModel,
@@ -117,7 +117,7 @@ ReservaController.getByCliente = (req, res) => {
         });
       });
   };
-  ReservaController.getByFechaE = (req, res) => {
+  ReservaController.getByFechaEntrada = (req, res) => {
     reservas.findAll({
         include: [{ 
             model:hotelModel,
@@ -133,7 +133,7 @@ ReservaController.getByCliente = (req, res) => {
         });
       });
   };
-  ReservaController.getByFechaS = (req, res) => {
+  ReservaController.getByFechaSalida = (req, res) => {
     reservas.findAll({
         include: [{ 
             model:hotelModel,
