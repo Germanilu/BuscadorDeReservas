@@ -1,6 +1,6 @@
 //Importo modelo de datos
 const db = require("../models");
-const reservas = db.reserva;
+const reservas = db.reservas;
 const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
 
 //Para las dependencias
