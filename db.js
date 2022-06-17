@@ -2,13 +2,14 @@
 
 const config = require('./config/config.js');
 const {Sequelize, DataTypes} = require('sequelize');
+require ('dotenv').config();
 const sequelize = new Sequelize(
-    process.env.MYSQL_DB || config.development.database,
-    process.env.MYSQL_USERNAME || config.development.username,
-    process.env.MYSQL_PASSWORD || config.development.password,
+    process.env.MYSQL_DB,
+    process.env.MYSQL_USERNAME,
+    process.env.MYSQL_PASSWORD,
     {
-        host: process.env.MYSQL_HOST || config.development.host,
-        port: process.env.MYSQL_PORT || config.development.port || '3306',
+        host: process.env.MYSQL_HOST,
+        port: process.env.MYSQL_PORT || '3306',
         dialect: 'mysql',
         operatorAliases: false,
         pool: {

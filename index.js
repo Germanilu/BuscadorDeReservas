@@ -8,7 +8,7 @@ const router = require('./router.js');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000; //Configuramos puerto heroku
+const PORT = process.env.PORT; //conf puerto HEROKU
 
 //CORS actions
 // Configurar cabeceras y cors
