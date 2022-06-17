@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.belongsTo(models,clientes,{
-        foreingKey:'clienteId',
+        foreingKey:'dni',
       });
       this.belongsTo(models,hoteles,{
         foreingKey:'hotelId',
@@ -19,9 +19,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   reservas.init({
+
     importe: DataTypes.INTEGER,
     fechaEntrada: DataTypes.DATE,
-    fechaSalida: DataTypes.DATE
+    fechaSalida: DataTypes.DATE,
+    dni: DataTypes.STRING,
+    hotelId: DataTypes.INTEGER
     
  }, {
     sequelize,

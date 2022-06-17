@@ -11,12 +11,15 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models,reservas, {
-        foreingKey:'id',
+        foreingKey:'dni',
       });
     }
   }
   clientes.init({
-    dni: DataTypes.STRING,
+    dni:{
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
     nombre: DataTypes.STRING,
     telefono: DataTypes.INTEGER,
     email: DataTypes.STRING
@@ -24,5 +27,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'clientes',
   });
+  clientes.removeAttribute('id');
   return clientes;
 };

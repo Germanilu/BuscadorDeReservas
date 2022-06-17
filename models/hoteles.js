@@ -1,5 +1,6 @@
 'use strict';
 const {Model} = require('sequelize');
+const { remove } = require('winston');
 const hoteles = require('./hoteles');
 module.exports = (sequelize, DataTypes) => {
   class hoteles extends Model {
@@ -11,15 +12,21 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models,reservas, {
-        foreingKey:'id',
+        foreingKey:'hotelId',
       });
     }
   }
   hoteles.init({
+    hotelId: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     nombre: DataTypes.STRING,
  }, {
     sequelize,
     modelName: 'hoteles',
   });
+  hoteles.removeAttribute('id');
   return hoteles;
 };
