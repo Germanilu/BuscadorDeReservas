@@ -5,6 +5,6 @@ const router = require('express').Router();
 const reservasRouter = require('./routes/reservaRoutes');
 
 // Rutas
-router.use('/reservas', reservaRouter);
+router.use('/reservas',reservasRouter);
 
 module.exports = router;
