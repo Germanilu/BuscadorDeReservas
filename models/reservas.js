@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models,clientes,{
+      this.belongsTo(models.clientes,{
         foreingKey:'dni',
       });
-      this.belongsTo(models,hoteles,{
+      this.belongsTo(models.hoteles,{
         foreingKey:'hotelId',
       });
     }
