@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //Importo modelo de datos
-const reservaController = require('../controllers/reservaController');
+const reservaController = require('../controllers/reservaControllers');
 
 // End-points CRUD Reservas
 router.get('/', reservaController.getAll);
