@@ -5,7 +5,7 @@ const logger = require('./config/winston');
 const db = require('./db.js');
 const router = require('./router.js');
 
-require('dotenv').config();
+// require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT; //conf puerto HEROKU
