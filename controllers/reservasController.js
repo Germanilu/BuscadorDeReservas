@@ -31,7 +31,7 @@ ReservaController.getAll = (req, res) => {
 ReservaController.getById = (req, res) => {
     const id = req.params.id;
 
-    reservas.findByPk(id, {include: [{ model:hotelModel}, {model:clientModel}]})
+    reservas.findByPk(id)
       .then(data => {
         if (data) {
           res.send(data);
@@ -51,11 +51,8 @@ ReservaController.getById = (req, res) => {
   //GET reserva por nombre de cliente
 
 ReservaController.getByDniCliente = (req, res) => {
-    reservas.findAll({
-        include: [{ 
-            model:hotelModel,
-            model:clientModel,
-            where: { clientName: req.params.clientName }}]})
+    reservas.findAll(
+      {where: {dni: req.params.dni}})
       .then(data => {
         res.send(data);
       })
@@ -69,11 +66,7 @@ ReservaController.getByDniCliente = (req, res) => {
 
   //Get reserva por id Hotel
   ReservaController.getByHotelId = (req, res) => {
-    reservas.findAll({
-        include: [{ 
-            model:hotelModel,
-            model:clientModel,
-            where: { hotelName: req.params.hotelName }}]})
+    reservas.findAll({where: {hotelId: req.params.hotelId}})
       .then(data => {
         res.send(data);
       })
@@ -85,11 +78,7 @@ ReservaController.getByDniCliente = (req, res) => {
       });
   };
   ReservaController.getByFechaEntrada = (req, res) => {
-    reservas.findAll({
-        include: [{ 
-            model:hotelModel,
-            model:clientModel,
-            where: { fechaEntrada: req.params.fechaEntrada }}]})
+    reservas.findAll({where: {fechaEntrada: req.params.fechaEntrada}})
       .then(data => {
         res.send(data);
       })
@@ -101,11 +90,7 @@ ReservaController.getByDniCliente = (req, res) => {
       });
   };
   ReservaController.getByFechaSalida = (req, res) => {
-    reservas.findAll({
-        include: [{ 
-            model:hotelModel,
-            model:clientModel,
-            where: { fechaSalida: req.params.fechaSalida }}]})
+    reservas.findAll( {where: {fechaSalida: req.params.fechaSalida}})
       .then(data => {
         res.send(data);
       })
