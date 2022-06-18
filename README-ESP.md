@@ -24,12 +24,17 @@ Para poder lanzar peticiones necesitamos utilizar Postman (https://www.postman.c
 
 A continuación se especifican el método a introducir en Postman, y lo que debemos introducir a continuación de la raiz para acceder a cada uno de los endpoints.
 
-GET / reservas --> Muestra todas las reservas
-GET / reservas / :id --> Muestra todos los ID de las reservas
-GET / reservas / dniCLiente / :dni --> Muestra todas las reservas por dni del cliente
-GET / reservas / hotel / :hotelId --> Muestra todas las reservas por cada hotel
-GET / reservas / entrada / :fechaEntrada --> Muestra todas las reservas de una determinada fecha de entrada
-GET / reservas / salida / :fechaSalida --> Muestra todas las reservas de una determinada fecha de salida
+GET / reservas --> Muestra todas las reservas  
+
+GET / reservas / :id --> Muestra todos los ID de las reservas  
+
+GET / reservas / dniCLiente / :dni --> Muestra todas las reservas por dni del cliente  
+
+GET / reservas / hotel / :hotelId --> Muestra todas las reservas por cada hotel  
+
+GET / reservas / entrada / :fechaEntrada --> Muestra todas las reservas de una determinada fecha de entrada  
+
+GET / reservas / salida / :fechaSalida --> Muestra todas las reservas de una determinada fecha de salida  
 
 # Modelo entidad Relación
 
