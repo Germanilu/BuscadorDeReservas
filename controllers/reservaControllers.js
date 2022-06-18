@@ -11,11 +11,11 @@ const ReservaController = {}; // Creamos el controloador de reservas
 
 
 
-//CRUD end-points Functions
+
 //GET all reservas
 ReservaController.getAll = (req, res) => {
     
-    reservas.findAll({include: [{ model:hotelModel}, {model:clientModel}] })
+    reservas.findAll()
       .then(data => {
         res.send(data);
       })
@@ -66,41 +66,8 @@ ReservaController.getByDniCliente = (req, res) => {
         });
       });
   };
-// get reserva por telefono
-  ReservaController.getByTelefono = (req, res) => {
-    reservas.findAll({
-        include: [{ 
-            model:hotelModel,
-            model:clientModel,
-            where: { telefono: req.params.telefono }}]})
-      .then(data => {
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Ha habido algun error buscando el telefono."
-        });
-      });
-  };
 
-  // get por email
-  ReservaController.getByEmail = (req, res) => {
-    reservas.findAll({
-        include: [{ 
-            model:hotelModel,
-            model:clientModel,
-            where: { email: req.params.email }}]})
-      .then(data => {
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Ha habido algun error buscando el email."
-        });
-      });
-  };
+  //Get reserva por id Hotel
   ReservaController.getByHotelId = (req, res) => {
     reservas.findAll({
         include: [{ 

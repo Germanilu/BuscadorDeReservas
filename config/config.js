@@ -1,3 +1,5 @@
+//Config conectada a .env
+
 require('dotenv').config();
 
 module.exports = {

@@ -1,5 +1,5 @@
-// Esto es siempre =
 
+//Conecto con config.js
 const config = require('./config/config.js');
 const {Sequelize, DataTypes} = require('sequelize');
 require ('dotenv').config();

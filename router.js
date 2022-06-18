@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-// Importando Routes
+// Importando las rutas definidas en routes.
 
 const reservasRouter = require('./routes/reservaRoutes');
 

@@ -1,7 +1,7 @@
 'use strict';
 const {Model} = require('sequelize');
-const { remove } = require('winston');
-const hoteles = require('./hoteles');
+// const { remove } = require('winston');
+// const hoteles = require('./hoteles');
 module.exports = (sequelize, DataTypes) => {
   class hoteles extends Model {
     /**

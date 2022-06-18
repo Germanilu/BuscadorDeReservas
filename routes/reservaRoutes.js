@@ -7,12 +7,12 @@ const reservaController = require('../controllers/reservaControllers');
 // End-points CRUD Reservas
 router.get('/', reservaController.getAll);
 router.get('/:id', reservaController.getById);
-router.get('/cliente/:dni', reservaController.getByDniCliente);
-router.get('/telefono/:telefono', reservaController.getByTelefono);
-router.get('/email/:email', reservaController.getByEmail);
+router.get('/dnicliente/:dni', reservaController.getByDniCliente);
+// router.get('/telefono/:telefono', reservaController.getByTelefono);
+// router.get('/email/:email', reservaController.getByEmail);
 router.get('/hotel/:hotelId', reservaController.getByHotelId);
-router.get('/fechaEntrada', reservaController.getByFechaEntrada);
-router.get('/fechaSalida', reservaController.getByFechaSalida);
+router.get('/entrada/:fechaEntrada', reservaController.getByFechaEntrada);
+router.get('/salida/:fechaSalida', reservaController.getByFechaSalida);
 
 
 
