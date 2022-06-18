@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     importe: DataTypes.INTEGER,
     fechaEntrada: DataTypes.DATE,
     fechaSalida: DataTypes.DATE,
-    // dni: DataTypes.STRING,
     hotelId: DataTypes.INTEGER
     
  }, {
