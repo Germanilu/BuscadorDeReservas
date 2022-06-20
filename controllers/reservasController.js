@@ -9,8 +9,10 @@ const ReservaController = {}; // Creamos el controloador de reservas
 
 //GET all reservas
 ReservaController.getAll = (req, res) => {
-    
-    reservas.findAll()
+    console.log("aqui")
+    reservas.findAll({
+      attributes:['hotel']
+    })
       .then(data => {
         res.send(data);
       })
@@ -46,8 +48,7 @@ ReservaController.getById = (req, res) => {
   //GET reserva por nombre de cliente
 
 ReservaController.getByDniCliente = (req, res) => {
-    reservas.findAll(
-      {where: {dni: req.params.dni}})
+    reservas.findAll({where: {dni: req.params.dni}})
       .then(data => {
         res.send(data);
       })

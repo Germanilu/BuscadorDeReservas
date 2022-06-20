@@ -1,15 +1,18 @@
 'use strict';
-const {Model} = require('sequelize');
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class reservas extends Model {
     static associate(models) {
+      //Relaciones
       reservas.belongsTo(models.clientes,{
-        foreingKey:'dni',
+        foreignKey: 'dni',
       })
-    }
+    };
     static associate(models) {
       reservas.belongsTo(models.hoteles,{
-        foreingKey:'hotelId',
+        foreignKey: 'hotelId',
       })
     };
   }
@@ -17,9 +20,9 @@ module.exports = (sequelize, DataTypes) => {
     importe: DataTypes.INTEGER,
     fechaEntrada: DataTypes.DATE,
     fechaSalida: DataTypes.DATE,
-    hotelId: DataTypes.INTEGER
-    
- }, {
+    hotelId: DataTypes.INTEGER,
+    dni: DataTypes.INTEGER
+  }, {
     sequelize,
     modelName: 'reservas',
   });
