@@ -4,8 +4,8 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class reservas extends Model {
+
     static associate(models) {
-      //Relaciones
       reservas.belongsTo(models.clientes,{
         foreignKey: 'dni',
       })

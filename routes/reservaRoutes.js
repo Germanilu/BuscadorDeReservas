@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 //Importo modelo de datos
-const reservaController = require('../controllers/reservasController');
+const reservasController = require('../controllers/reservasController');
 
 // End-points CRUD Reservas
-router.get('/', reservaController.getAll);
-router.get('/:id', reservaController.getById);
-router.get('/dnicliente/:dni', reservaController.getByDniCliente);
-router.get('/hotel/:hotelId', reservaController.getByHotelId);
-router.get('/entrada/:fechaEntrada', reservaController.getByFechaEntrada);
-router.get('/salida/:fechaSalida', reservaController.getByFechaSalida);
+router.get('/', reservasController.getAll);
+router.get('/:id', reservasController.getById);
+router.get('/dniCliente/:dni', reservasController.getByDniCliente);
+router.get('/hotel/:hotelId', reservasController.getByHotelId);
+router.get('/entrada/:fechaEntrada', reservasController.getByFechaEntrada);
+router.get('/salida/:fechaSalida', reservasController.getByFechaSalida);
 
 
 
